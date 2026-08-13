@@ -1,0 +1,39 @@
+/* Additional custom styles */
+/* Can be used for custom overrides if needed */
+
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-container iframe {
+  filter: grayscale(10%) contrast(100%) invert(0%);
+}
+.testimonial-container { overflow: hidden; width: 100%; position: relative; }
+.testimonial-track { display: flex; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+.testimonial-item { min-width: 100%; padding: 2rem; text-align: center; }
+
+
+
+/* Container untuk menyembunyikan slide yang tidak aktif */
+.testimonial-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Track yang akan digeser */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Card Styling */
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+

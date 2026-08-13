@@ -1,0 +1,198 @@
+/* ============================================================
+ * ATHERA PROPERTI - CUSTOM STANDALONE STYLES (FIX MOBILE)
+ * ============================================================ */
+
+/* --- Custom Scrollbar & Smooth Behavior --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Mobile Spacing & Flex Fallbacks (Memperbaiki Tombol & Layout HP) --- */
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem !important;
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem !important;
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 2rem !important;
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1rem !important;
+}
+
+/* Flex Gap Utility Fallbacks */
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }
+.gap-6 { gap: 1.5rem !important; }
+.gap-8 { gap: 2rem !important; }
+
+/* Responsive Typography & Hero Adjustment for Mobile (< 640px) */
+@media (max-width: 639px) {
+  #hero {
+    padding-top: 7.5rem !important;
+    padding-bottom: 4rem !important;
+    min-height: 100vh !important;
+  }
+  
+  #hero h1 {
+    font-size: 1.85rem !important; /* ~30px agar tidak terlalu besar di HP */
+    line-height: 2.25rem !important;
+  }
+
+  #hero p {
+    font-size: 0.875rem !important;
+    line-height: 1.4rem !important;
+  }
+
+  .mobile-btn-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .mobile-btn-stack a {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* --- Standalone Product Carousel / Slider --- */
+.product-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.product-slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.product-slider-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Tombol Navigasi Slider */
+.slider-nav-btn {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.slider-nav-btn:hover {
+  background-color: #1e2d24;
+  color: #ffffff;
+  border-color: #1e2d24;
+}
+
+.slider-nav-prev { left: 12px; }
+.slider-nav-next { right: 12px; }
+
+/* Indicator Dots Slider */
+.slider-dots-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #664D03;
+  width: 20px;
+  border-radius: 99px;
+}
+
+/* --- Infinite Auto Marquee Mitra / Sponsor --- */
+@keyframes autoMarquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-wrapper-track {
+  display: flex !important;
+  width: max-content !important;
+  animation: autoMarquee 20s linear infinite !important;
+  will-change: transform;
+}
+
+.marquee-wrapper-track:hover {
+  animation-play-state: paused !important;
+}
+
+.sponsor-logo-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 60px !important;
+  width: 120px !important;
+  flex-shrink: 0 !important;
+}
+
+.sponsor-logo-box img {
+  height: 40px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  max-width: 110px !important;
+  object-fit: contain !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.sponsor-logo-box:hover img {
+  transform: scale(1.12) !important;
+}
+
+@media (min-width: 640px) {
+  .sponsor-logo-box {
+    height: 70px !important;
+    width: 150px !important;
+  }
+  .sponsor-logo-box img {
+    height: 45px !important;
+    max-height: 45px !important;
+    max-width: 130px !important;
+  }
+}
+
+/* --- Pulsing Button Animation --- */
+@keyframes customPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 6px -1px rgba(102, 77, 3, 0.3); }
+  50% { transform: scale(1.03); box-shadow: 0 10px 15px -3px rgba(102, 77, 3, 0.5); }
+}
+
+.pulse-gold {
+  animation: customPulse 2s ease-in-out infinite;
+}
